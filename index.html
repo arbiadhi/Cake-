@@ -2,70 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>🎂 Happy Birthday!</title>
+  <title>Happy Birthday Adhi!</title>
   <style>
     body {
       background-color: #ffe6f0;
+      font-family: 'Arial', cursive;
       text-align: center;
-      font-family: 'Segoe UI', sans-serif;
-      margin-top: 80px;
+      padding: 30px;
+      overflow-x: hidden;
     }
-
     h1 {
-      font-size: 3rem;
-      color: #d6336c;
+      font-size: 2.5em;
+      color: #d63384;
     }
-
-    .cake {
-      width: 150px;
-      height: 180px;
-      background: pink;
-      margin: 40px auto;
-      border-radius: 15px;
-      position: relative;
-      box-shadow: 0 0 20px #ff69b4;
-    }
-
-    .candle {
-      width: 10px;
-      height: 40px;
-      background: orange;
-      position: absolute;
-      top: -40px;
-      left: 70px;
-      border-radius: 3px;
-    }
-
-    .flame {
-      width: 15px;
-      height: 15px;
-      background: yellow;
-      border-radius: 50%;
-      position: absolute;
-      top: -55px;
-      left: 67px;
-      box-shadow: 0 0 30px gold;
-      animation: flicker 0.3s infinite alternate;
-    }
-
-    @keyframes flicker {
-      from { transform: scale(1); }
-      to { transform: scale(1.2); opacity: 0.8; }
-    }
-
     p {
-      font-size: 1.2rem;
+      font-size: 1.2em;
+      margin: 20px;
       color: #444;
+    }
+    img {
+      width: 250px;
       margin-top: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+    }
+    .scroll-note {
+      margin-top: 50px;
+      font-size: 1em;
+      color: #6c757d;
     }
   </style>
 </head>
 <body>
-  <h1>🎉 Happy Birthday! 🎂</h1>
-  <div class="cake">
-    <div class="candle"></div>
-    <div class="flame"></div>
-  </div>
-  <p>Wishing you a day full of sweetness and smiles!</p>
+  <h1>🎉 Happy Birthday Adhi! 🎂</h1>
+
+  <!-- Cake image -->
+  <img src="birthday_cake.jpg" alt="Birthday Cake">
+
+  <!-- Message -->
+  <p>May the year ahead be filled with happiness and prosperity. I love you ❤️</p>
+  <p>There is a surprise for you...<br> Please slide the page upward...<br> Let's celebrate your birthday together!<br>Blow the birthday cake 🍰</p>
+  <div class="scroll-note">(Scroll up...)</div>
+
+  <!-- Music -->
+  <audio autoplay loop>
+    <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Confetti -->
+  <canvas id="confetti-canvas" style="position: fixed; top: 0; left: 0; pointer-events: none;"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    const canvas = document.getElementById('confetti-canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    setInterval(() => {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#ff69b4', '#ffd700', '#add8e6', '#90ee90']
+      });
+    }, 2000);
+  </script>
 </body>
 </html>
